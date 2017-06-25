@@ -1,6 +1,6 @@
-/build/
-/.idea/
-/temp/
+build/
+.idea/
+temp/
 
 classic.json
 classic.jsonp

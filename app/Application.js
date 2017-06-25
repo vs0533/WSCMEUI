@@ -14,6 +14,13 @@ Ext.define('WsCme.Application', {
 
     launch: function () {
         // TODO - Launch the application
+
+        var loggedIn;
+        loggedIn = localStorage.getItem("TutorialLoggedIn");
+
+        Ext.create({
+            xtype: loggedIn ? 'app-main' : 'loginmain'
+        });
     },
 
     onAppUpdate: function () {
