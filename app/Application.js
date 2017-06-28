@@ -17,10 +17,10 @@ Ext.define('WsCme.Application', {
         // 设置button menu 的时候在console中显示错误，加了这句就好了。
         // 参阅此处
         // https://docs.sencha.com/extjs/6.0/whats_new/6.0.0/extjs_upgrade_guide.html#Button
-        Ext.enableAriaButtons = false;
+        // Ext.enableAriaButtons = false;
 
         // 如果一个 panel 没有设置title，会在console里面显示一个警告信息，加上这个就没了
-        Ext.enableAriaPanels = false;
+        // Ext.enableAriaPanels = false;
     },
     launch: function () {
         // TODO - Launch the application

@@ -13,12 +13,37 @@ Ext.define('WsCme.view.main.Main', {
     viewModel: 'main',
     extend: 'Ext.container.Viewport',
     layout: 'border',
-    initComponent:function () {
+    initComponent: function () {
         Ext.setGlyphFontFamily('FontAwesome'); // 设置图标字体文件，只有设置了以后才能用glyph属性
-        this.items= [
+        this.items = [
             {
                 region: "north",
+                title: '信息面版，左边的菜单面版，中间的模块信息显示区域',
                 xtype: 'maintop'
+            },
+            {
+                xtype: 'mainmenutoolbar',
+                region: 'north', // 把他放在maintop的下面
+                hidden: true, // 默认隐藏
+                bind: {
+                    hidden: '{!isToolbarMenu}' // 如果不是标准菜单就隐藏
+                }
+            },
+            {
+                xtype : 'mainbottom',
+                region : 'south' // 把它放在最底下
+            },
+            {
+                xtype : 'mainmenuregion',
+                reference : 'mainmenuregion',
+                region : 'west', // 左边面板
+                width : 220,
+                collapsible : true,
+                split : true,
+                hidden : true, // 系统默认是显示此树状菜单。这里改成true也可以，你就能看到界面显示好后，再显示菜单的过程
+                bind : {
+                    hidden : '{!isTreeMenu}'
+                }
             },
             // {
             //     region: "west",
@@ -26,8 +51,9 @@ Ext.define('WsCme.view.main.Main', {
             // },
             {
                 region: "center",
-                xtype:'panel',
-                title:'ss'
+                xtype: 'panel',
+                title:'sss',
+                html:'<h1>111</h1>'
             }
         ];
         this.callParent();

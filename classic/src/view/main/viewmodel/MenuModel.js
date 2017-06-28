@@ -47,6 +47,14 @@ Ext.define('WsCme.view.main.viewmodel.MenuModel',{
             icon : group.tf_iconUrl
         };
     },
+    // 根据data.tf_MenuGroups生成树状菜单
+    getTreeMenus : function() {
+        var items = [];
+        Ext.Array.each(this.get('menus'), function(group) { // 遍历菜单项的数组
+            items.push(this.getTreeMenuItem(group));
+        }, this);
+        return items;
+    },
     getTreeMenuItem : function(group, expand) {
         var items = [];
         //菜单类型 group ,module, reportGroup, report, function,

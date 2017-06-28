@@ -4,6 +4,7 @@
 Ext.define('WsCme.view.main.MainModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.main',
+    requires : [ 'Ext.util.Cookies' ],
     mixins:{
        menuModel:'WsCme.view.main.viewmodel.MenuModel'
     },
@@ -12,6 +13,13 @@ Ext.define('WsCme.view.main.MainModel', {
         app.models = this;
         var me = this;
         this.callParent(arguments);
+
+        // this.localStore = new Ext.util.LocalStorage({
+        //     id : getContextPath() + '/systemSetting'
+        // });
+        this.localStore =  Ext.util.LocalStorage.get(getContextPath() + '/systemSetting');
+        // console.log("contextpath"+getContextPath());
+
         this.notify();
         Ext.Ajax.request({
             url:'resources/data/ApplicationInfo.json',

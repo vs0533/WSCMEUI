@@ -205,6 +205,10 @@
         {
             "path": "app.js",
             "bundle": true
+        },
+        {
+            "path": "app/ux/OnReady.js",
+            "includeInBundle": true
         }
     ],
 
@@ -265,6 +269,10 @@
             "path": "${build.out.css.path}",
             "bundle": true,
             "exclude": ["fashion"]
+        },
+        {
+            "path":"resources/css/all.css",
+            "bundle":true
         }
     ],
 

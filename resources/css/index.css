@@ -1,0 +1,158 @@
+#loading {
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    margin-left: -45px;
+    padding: 2px;
+    z-index: 20001;
+    height: auto;
+    border: 1px solid #ccc;
+    color: black;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 300;
+    font-family: helvetica, arial, verdana, sans-serif;
+}
+
+#loading .loading-indicator {
+    background: white;
+    color: #444;
+    font: bold 13px tahoma, arial, helvetica;
+    padding: 10px;
+    margin: 0;
+    height: auto;
+}
+
+#loading .loading-indicator img {
+    margin-right: 8px;
+    float: left;
+    vertical-align: top;
+}
+
+#loading-msg {
+    font: normal 10px arial, tahoma, sans-serif;
+}
+
+.icon16_16 {
+    width: 16px;
+    height : 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.icon256_256 {
+    width: 256px;
+    height : 256px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.iconRed {
+    color: red !important;
+}
+
+
+/* 界面方案的选择css */
+.theme-neptune {
+    background: #157fcc;
+}
+
+.theme-classic {
+    background: #abc7ec;
+}
+
+.theme-gray {
+    background: #a2a2a2;
+}
+
+.theme-steelblue {
+    background: #244977;
+}
+
+.theme-triton {
+    background: #4c8ed8;
+}
+
+.theme-aria {
+    background: #2c3044;
+}
+
+.theme-select-over {
+    border-width: 1px;
+    border-style: outset;
+}
+
+
+/* 菜单条前面的，转换菜单方式的二个按钮的css */
+.menuchange {
+    opacity: .7;
+    display: block !important;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.menuchange:hover {
+    opacity: 1;
+}
+
+/* 显示或隐藏顶部和底部按钮的css */
+.regionchange {
+    opacity: .5;
+    display: block !important;
+    cursor: pointer;
+    color: blue !important;
+}
+
+.regionchange:hover {
+    opacity: 1;
+}
+
+#menu_treemenu {
+    margin-top: -3px;
+}
+
+/* 弹出式对话框的 ＣＳＳ*/
+#instructions ul li {
+    list-style-type: disc;
+    list-style-position: outside;
+    font-size: 12px;
+    margin: 0px 0px 0px 20px;
+}
+
+/* Icons */
+.ux-notification-icon-smile {
+    background-image: url('../images/system/smile1.png');
+}
+
+.ux-notification-icon-warn {
+    background-image: url('../images/system/warn.png');
+}
+
+.ux-notification-icon-error {
+    background-image: url('../images/system/error.png');
+}
+
+/* Using standard theme */
+.ux-notification-window .x-window-body {
+    text-align: center;
+    padding: 15px 5px 15px 5px;
+    width: 200px;
+}
+
+/* Custom styling */
+.ux-notification-light .x-window-header {
+    background-color: transparent;
+}
+
+body .ux-notification-light {
+    background-image: url('../images/bg/fader.png');
+}
+
+.ux-notification-light .x-window-body {
+    text-align: center;
+    padding: 15px 5px 18px 5px;
+    width: 200px;
+    background-color: transparent;
+    border: 0px solid white;
+}
