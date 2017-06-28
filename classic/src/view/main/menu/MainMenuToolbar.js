@@ -3,8 +3,8 @@
  */
 Ext.define('WsCme.view.main.menu.MainMenuToolbar', {
     extend : 'Ext.toolbar.Toolbar',
-    alias : 'widget.mainmenutoolbar',
-
+    // alias : 'widget.mainmenutoolbar',
+    xtype:'mainmenutoolbar',
     requires : [ 'WsCme.view.main.widget.MenuChangeToolbar',
         'app.ux.ButtonTransparent' ],
 

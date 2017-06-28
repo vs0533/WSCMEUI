@@ -3,8 +3,8 @@
  */
 Ext.define('WsCme.view.main.menu.MainMenuTree', {
     extend : 'Ext.tree.Panel',
-    alias : 'widget.mainmenutree',
-
+    // alias : 'widget.mainmenutree',
+    xtype:'mainmenutree',
     requires : [ 'app.lib.TreeSearchField', 'app.lib.TreeFilter' ],
 
     rootVisible : true,

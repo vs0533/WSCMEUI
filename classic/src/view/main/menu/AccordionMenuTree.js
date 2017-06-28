@@ -3,8 +3,8 @@
  */
 Ext.define('WsCme.view.main.menu.AccordionMenuTree', {
     extend : 'Ext.tree.Panel',
-    alias : 'widget.accordionmenutree',
-
+    // alias : 'widget.accordionmenutree',
+    xtype:'accordionmenutree',
     rootVisible : true,
     lines : false,
 

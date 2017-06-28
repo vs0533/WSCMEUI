@@ -3,8 +3,8 @@
  */
 Ext.define('app.view.main.menu.ButtonMainMenu',{
     extend:'app.ux.ButtonTransparent',
-    alias:'widget.buttonmainmenu',
-
+    // alias:'widget.buttonmainmenu',
+    xtype:'buttonmainmenu',
     text:'菜单',
     iconCls:'fa fa-list',
     initComponent:function(){

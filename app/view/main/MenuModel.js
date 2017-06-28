@@ -1,7 +1,7 @@
 /**
  * Created by byron on 2017/6/28.
  */
-Ext.define('WsCme.view.main.viewmodel.MenuModel',{
+Ext.define('WsCme.view.main.MenuModel',{
     extend:'Ext.Mixin',
     init:function(){
         console.log('MenuModel init.....');

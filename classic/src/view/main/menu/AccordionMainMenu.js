@@ -4,8 +4,8 @@
 
 Ext.define('WsCme.view.main.menu.AccordionMainMenu', {
     extend : 'Ext.panel.Panel',
-    alias : 'widget.mainmenuaccordion',
-
+    // alias : 'widget.mainmenuaccordion',
+    xtype:'mainmenuaccordion',
     requires : [ 'WsCme.view.main.menu.AccordionMenuTree' ],
 
     layout : {

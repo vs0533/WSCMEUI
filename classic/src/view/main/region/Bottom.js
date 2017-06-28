@@ -7,7 +7,8 @@
 Ext.define('WsCme.view.main.region.Bottom', {
 
     extend : 'Ext.toolbar.Toolbar',
-    alias : 'widget.mainbottom',
+    // alias : 'widget.mainbottom',
+    xtype:'mainbottom',
     requires : [ 'app.ux.ButtonTransparent',
         'WsCme.view.main.region.BottomController','Ext.toolbar.Spacer','Ext.toolbar.Fill' ],
 

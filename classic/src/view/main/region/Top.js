@@ -4,7 +4,7 @@
 Ext.define('WsCme.view.main.region.Top',{
     extend:'Ext.toolbar.Toolbar',
     xtype:'maintop',
-    alias:'widget.maintop',
+    // alias:'widget.maintop',
     requires:[
         'app.ux.ButtonTransparent',
         'app.ux.ThemeSelect',

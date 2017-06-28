@@ -3,8 +3,8 @@
  */
 Ext.define('WsCme.view.main.region.Left', {
     extend : 'Ext.panel.Panel',
-    alias : 'widget.mainmenuregion',
-
+    // alias : 'widget.mainmenuregion',
+    xtype:'mainmenuregion',
     requires : [ 'WsCme.view.main.menu.MainMenuTree',
         'WsCme.view.main.menu.AccordionMainMenu'],
 

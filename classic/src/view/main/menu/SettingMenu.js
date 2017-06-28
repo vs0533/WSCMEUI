@@ -6,8 +6,8 @@
  */
 Ext.define('WsCme.view.main.menu.SettingMenu', {
     extend : 'app.ux.ButtonTransparent',
-    alias : 'widget.settingmenu',
-
+    // alias : 'widget.settingmenu',
+    xtype:'settingmenu',
     requires : [ 'Ext.menu.Separator', 'WsCme.view.main.menu.GridSettingForm' ],
     uses : [ 'WsCme.view.main.widget.Monetary' ],
     text : '设置',

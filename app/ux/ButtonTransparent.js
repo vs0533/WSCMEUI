@@ -6,8 +6,8 @@
  */
 Ext.define('app.ux.ButtonTransparent', {
     extend : 'Ext.button.Button', // 继续于Ext.button.Button
-    alias : 'widget.buttontransparent', // 此类的xtype类型为buttontransparent
-
+    // alias : 'widget.buttontransparent', // 此类的xtype类型为buttontransparent
+    xtype:'buttontransparent',
     disableMouseOver : false,
 
     // 类初始化时执行

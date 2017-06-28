@@ -1,144 +1,47 @@
 /**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- *
- * TODO - Replace this content of this view to suite the needs of your application.
+ * Created by byron on 2017/6/28.
  */
-Ext.define('WsCme.view.main.MainController', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.main',
+Ext.define('WsCme.view.main.MainController',{
+    extend:'Ext.app.ViewController',
+    requires:[],
+    alias:'controller.main',
+    // 混合设置，可以理解为多重继承，本类将继承下面的三个类中的方法
+    mixins : {
+        // 对grid中界面进行改变的控制器
+        // gridController : 'app.view.main.controller.GridController',
+        // 对中央区域界面进行改变的控制器
+        centerController : 'WsCme.view.main.CenterController',
+        // 对左边菜单界面进行改变的控制器
+        // leftController : 'app.view.main.controller.LeftController'
+    },
+    // 如果窗口的大小改变了，并且顶部和底部都隐藏了，就要调整显示顶和底的那个控件的位置
+    onMainResize : function() {
+        var b = this.getView().showOrHiddenToolbar;
+        // // 当窗口大小发生改变的时候，发送消息告诉showButton这个按钮，让它从新调整位置。
+        b.fireEvent('parentResize', b);
+    },
 
-    routes  : {
-        ':cmpid/:nodeid': {
-            action: 'handleRoute',//执行跳转
-            before: 'beforeHandleRoute'//路由跳转前操作
+    // 显示菜单条，隐藏左边菜单区域和顶部的按钮菜单。
+    showMainMenuToolbar : function(button) {
+        this.getView().getViewModel().set('menuType', 'toolbar');
+    },
+
+    // 显示左边菜单区域,隐藏菜单条和顶部的按钮菜单。
+    showLeftMenuRegion : function(button) {
+        this.getView().getViewModel().set('menuType', 'tree');
+    },
+    // 显示顶部的按钮菜单,隐藏菜单条和左边菜单区域。
+    showButtonMenu : function(button) {
+        var view = this.getView();
+        if (view.down('maintop').hidden) {
+            // 如果顶部区域和底部区域隐藏了，在用按钮菜单的时候，把他们显示出来，不然菜单就不见了
+            view.showOrHiddenToolbar.toggle();
         }
+        view.getViewModel().set('menuType', 'button');
     },
 
-    init: function () {
-        this.control(
-            {
-                'treepanel':{
-                    selectionchange:this.treeNavSelectionChange
-                },
-                'mainmenu button[action=logout]':{
-                    click:this.logout
-                }
-            }
-        );
-    },
-    treeNavSelectionChange:function (selModel, records) {
-        var record = records[0];
-        var route = record.get("route");
-        var nodeId = record.get("id");
-        if(route == null)
-            return;
-        this.redirectTo(route+"/"+nodeId);
-    },
-    beforeHandleRoute: function(cmpid,nodeid, action) {
-        var me = this;
-        var navigationTree = me.getView().down("treepanel");
-        var store = navigationTree.getStore();
-        var node = store.getNodeById(nodeid);
-
-        if (node) {
-            //resume action
-            action.resume();
-        } else if(store.getCount() === 0){
-            action.stop();
-            me.redirectTo(cmpid+"/"+nodeid);
-            //在store load事件中判断节点，避免store数据未加载情况
-            // store.on('load', function () {
-            //     node = store.getNodeById(nodeid);
-            //     if (node) {
-            //         action.resume();
-            //     }else {
-            //         Ext.Msg.alert('路由跳转失败', '找不到id为' + cmpid + ' 的组件');
-            //         action.stop();
-            //     }
-            // });
-        }else {
-            Ext.Msg.alert(
-                '路由跳转失败',
-                '找不到id为' + cmpid + ' 的组件. 界面将跳转到应用初始界面',
-                function() {
-                    me.redirectTo('all');
-                }
-            );
-            //stop action
-            action.stop();
-        }
-    },
-    handleRoute: function(cmpid,nodeid) {
-        var me = this;
-        var navigationTree = me.getView().down("treepanel");
-        var contentPanel = me.getView().down("app-contentPanel");
-        var store = navigationTree.getStore();
-        var node = store.getNodeById(nodeid);
-
-        //响应路由，左侧树定位到相应节点
-        navigationTree.getSelectionModel().select(node);
-        navigationTree.getView().focusNode(node);
-
-        // contentPanel.removeAll(true);
-        if (node.isLeaf()) {
-            //className = Ext.ClassManager.getNameByAlias('widget.' + cmpid);
-            // contentPanel.setActiveTab(contentPanel.add({
-            //     xtype : 'modulepanel',
-            //     // 将当前的选中菜单的 "模块名称" 加入到参数中
-            //     moduleName : cmpid,
-            //     closable : true,
-            //     reorderable : true
-            // }));
-            var cmp = Ext.create({
-                xtype: cmpid
-            });
-            // ViewClass = Ext.getClass(className);
-            // cmp = new ViewClass();
-            // contentPanel.add(cmp);
-            contentPanel.setActiveTab(contentPanel.add(cmp));
-        }
-        var text = node.get('text'),
-            title = node.isLeaf() ? (node.parentNode.get('text') + ' - ' + text) : text;
-        // contentPanel.setTitle(title);
-        document.title = document.title.split(' - ')[0] + ' - ' + text;
-        // if(node.isLeaf()){
-        //     Ext.Msg.alert(
-        //         '提示',
-        //         '当前点击的是叶子节点，右侧panel将跳转到对应的组件上');
-        // }else{
-        //     Ext.Msg.alert(
-        //         '提示',
-        //         '当前点击的是非叶子节点，右侧panel将跳转到导航界面上');
-        // }
-    },
-    logout:function () {
-        var me = this;
-        localStorage.removeItem('TutorialLoggedIn');
-        //localStorage.removeItem('token');
-        me.getView().destroy();
-        Ext.create({
-            xtype: 'loginmain'
-        });
+    onResetConfigClick : function() {
+        console.log('reset all config');
+        this.getView().getViewModel().resetConfig();
     }
-    // accordionLoad:function (resp,opts,me) {
-    //     var navigation = me.getView().down("mainmenu");
-    //     var data = Ext.util.JSON.decode(resp.responseText);
-    //     Ext.each(data, function(rec) {
-    //         var treestore = Ext.create("store.navigation",{params:rec.id});
-    //         var tree = Ext.create("Ext.tree.Panel",{
-    //             border:false,
-    //             store:treestore,
-    //             rootVisible:false
-    //         });
-    //         tree.on("beforeload",function () {
-    //             console.log("bbbb11");
-    //         },tree);
-    //         // var panel = Ext.create("Ext.panel.Panel",{
-    //         //     title:rec.text,
-    //         //     items:[tree]
-    //         // });
-    //         navigation.add(tree);
-    //     });
-    // }
 });

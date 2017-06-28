@@ -3,7 +3,8 @@
  */
 Ext.define('WsCme.view.main.menu.GridSettingForm', {
     extend : 'Ext.form.Panel',
-    alias : 'widget.gridsettingform',
+    // alias : 'widget.gridsettingform',
+    xtype:'gridsettingform',
     layout : {
         type : 'table',
         columns : 2,

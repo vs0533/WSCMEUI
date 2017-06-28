@@ -3,7 +3,8 @@
  */
 Ext.define('WsCme.view.main.widget.MenuChangeToolbar', {
     extend : 'Ext.Component',
-    alias : 'widget.menuchangetoolbar',
+    // alias : 'widget.menuchangetoolbar',
+    xtype:'menuchangetoolbar',
     style:'border:1px solid red;',
     html : '<span id="menu_buttonmenu" class="fa fa-caret-up menuchange"></span>'
     + '<span id="menu_treemenu" class="fa fa-caret-down menuchange"></span>',
