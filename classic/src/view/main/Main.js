@@ -1,10 +1,12 @@
 Ext.define('WsCme.view.main.Main', {
     xtype: 'app-main',
     requires: [
-        'WsCme.view.main.Menu',
+        'WsCme.view.main.region.Top',
+        'WsCme.view.main.MainModel',
+        // 'WsCme.view.main.Menu',
         // 'WsCme.view.main.MainController',
         // 'WsCme.view.main.MainModel',
-        'WsCme.view.main.Header',
+        // 'WsCme.view.main.Header',
         'WsCme.view.main.ContentPanel'
     ],
     controller: 'main',
@@ -16,15 +18,16 @@ Ext.define('WsCme.view.main.Main', {
         this.items= [
             {
                 region: "north",
-                xtype: 'mainheader'
+                xtype: 'maintop'
             },
-            {
-                region: "west",
-                xtype: 'mainmenu'
-            },
+            // {
+            //     region: "west",
+            //     xtype: 'mainmenu'
+            // },
             {
                 region: "center",
-                xtype:'app-contentPanel'
+                xtype:'panel',
+                title:'ss'
             }
         ];
         this.callParent();
