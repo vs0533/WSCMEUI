@@ -30,46 +30,29 @@ Ext.define('WsCme.view.main.Main', {
             title: '信息面版，左边的菜单面版，中间的模块信息显示区域',
             xtype: 'maintop'
         },
-        // {
-        //     xtype: 'mainmenutoolbar',
-        //     region: 'north', // 把他放在maintop的下面
-        //     hidden: true, // 默认隐藏
-        //     bind: {
-        //         hidden: '{!isToolbarMenu}' // 如果不是标准菜单就隐藏
-        //     }
-        // },
-        // {
-        //     xtype: 'mainbottom',
-        //     region: 'south' // 把它放在最底下
-        // },
-        // {
-        //     xtype: 'mainmenuregion',
-        //     reference: 'mainmenuregion',
-        //     region: 'west', // 左边面板
-        //     width: 220,
-        //     collapsible: true,
-        //     split: true,
-        //     hidden: true, // 系统默认是显示此树状菜单。这里改成true也可以，你就能看到界面显示好后，再显示菜单的过程
-        //     bind: {
-        //         hidden: '{!isTreeMenu}'
-        //     }
-        // },
         {
-            region: "west",
-            width: 200,
-            // layout: "accordion",
-            animCollapse: false,
-            collapsed: false,
-            collapseFirst: true,
-            autoScroll : true,
-            border: false,
-            autoWidth: true,
-            split: true,
+            xtype: 'mainmenutoolbar',
+            region: 'north', // 把他放在maintop的下面
+            hidden: true, // 默认隐藏
+            bind: {
+                hidden: '{!isToolbarMenu}' // 如果不是标准菜单就隐藏
+            }
+        },
+        {
+            xtype: 'mainbottom',
+            region: 'south' // 把它放在最底下
+        },
+        {
+            xtype: 'mainmenuregion',
+            reference: 'mainmenuregion',
+            region: 'west', // 左边面板
+            width: 220,
             collapsible: true,
-            splitterResize: true,
-            title:'sddfas',
-            html:"<h1>234</h1>"
-            // xtype: 'mainmenu'
+            split: true,
+            hidden: true, // 系统默认是显示此树状菜单。这里改成true也可以，你就能看到界面显示好后，再显示菜单的过程
+            bind: {
+                hidden: '{!isTreeMenu}'
+            }
         },
         {
             region: "center",
