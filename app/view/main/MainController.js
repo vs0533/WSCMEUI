@@ -14,6 +14,35 @@ Ext.define('WsCme.view.main.MainController',{
         // 对左边菜单界面进行改变的控制器
         // leftController : 'app.view.main.controller.LeftController'
     },
+    init:function(){
+        // this.mixins.centerController.init.call(this);
+    },
+    // 单击了顶部的 首页 按钮
+    onHomePageButtonClick : function(menuitem) {
+        // 在Contoller中通过 getView()来取得当前控制的控件
+        // 在查找控件的时候一定要使用相对路径，用up(),down()函数来查找，
+        // 或者在mvvm方式中可以用lookupReference()，最好不要用getCmp()函数
+        var s = this.lookupReference('maincenter');
+        this.lookupReference('maincenter').setActiveTab(0);
+    },
+
+    // 选择了主菜单上的菜单后执行
+    onMainMenuClick : function(menuitem) {
+        // menuType ,module, reportGroup, report, function,
+        // window, executestatement
+        if (menuitem.menuType === 'module' || menuitem.menuType === 'reportGroup'
+            || menuitem.menuType === 'report')
+            this.addModuleToCenter(menuitem);
+        else
+        // 其他类型的菜单选中后的执行
+            ;
+
+    },
+
+    // 树形菜单单击了菜单条
+    onMenuTreeItemClick : function(tree, item) {
+        this.onMainMenuClick(item.raw);
+    },
     // 如果窗口的大小改变了，并且顶部和底部都隐藏了，就要调整显示顶和底的那个控件的位置
     onMainResize : function() {
         var b = this.getView().showOrHiddenToolbar;

@@ -56,8 +56,9 @@ Ext.define('WsCme.view.main.Main', {
         },
         {
             region: "center",
-            // xtype: 'maincenter'
-            title:'sdf'
+            xtype: 'maincenter',
+            // title:'sdf',
+            reference:'maincenter'
         }
     ],
 

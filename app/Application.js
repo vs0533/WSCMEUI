@@ -10,6 +10,7 @@ Ext.define('WsCme.Application', {
 
     stores: [
         // TODO: add global / shared stores here
+        'OpenRecentStore'
     ],
     init: function () {
 

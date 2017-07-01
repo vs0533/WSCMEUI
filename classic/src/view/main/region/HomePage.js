@@ -13,7 +13,7 @@ Ext.define('WsCme.view.main.region.HomePage', {
     requires : [ 'WsCme.view.main.widget.OpenRecentTree' ],
 
     title : '首页',
-    iconCls : 'fa fa-home',
+    glyph:'0xf015',
 
     frame : false,
     border : false,
@@ -31,8 +31,8 @@ Ext.define('WsCme.view.main.region.HomePage', {
         items : [ {
             title : '待办事项'
         }, {
-            // xtype : 'openrecenttree',
-            // reference : 'openrecenttree',
+            xtype : 'openrecenttree',
+            reference : 'openrecenttree',
             title : '最近访问过的模块'
         }, {
             title : '最近修改过的数据'

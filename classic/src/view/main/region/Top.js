@@ -50,7 +50,8 @@ Ext.define('WsCme.view.main.region.Top',{
             {
                 text:'首页',
                 // iconCls:'fa fa-home',
-                glyph:0xf015
+                glyph:0xf015,
+                handler : 'onHomePageButtonClick'
             },
             {
                 xtype : 'settingmenu'

@@ -5,13 +5,13 @@ Ext.define('WsCme.view.main.menu.MainMenuTree', {
     extend : 'Ext.tree.Panel',
     // alias : 'widget.mainmenutree',
     xtype:'mainmenutree',
-    requires : [ 'app.lib.TreeSearchField', 'app.lib.TreeFilter' ],
+    requires : [ 'WsCme.lib.TreeSearchField', 'WsCme.lib.TreeFilter' ],
 
     rootVisible : true,
     lines : false,
 
     mixins : {
-        treeFilter : 'app.lib.TreeFilter' // 混合tree内部筛选的filter
+        treeFilter : 'WsCme.lib.TreeFilter' // 混合tree内部筛选的filter
     },
 
     listeners : {

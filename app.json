@@ -205,12 +205,12 @@
      */
     "js": [
         {
-            "path": "app.js",
-            "bundle": true
-        },
-        {
             "path": "app/ux/OnReady.js",
             "includeInBundle": true
+        },
+        {
+            "path": "app.js",
+            "bundle": true
         }
     ],
 

@@ -7,7 +7,7 @@
  * Add basic filtering to Ext.tree.Panel. Add as a mixin: mixins: { treeFilter:
  * 'MyApp.lib.TreeFilter' }
  */
-Ext.define('app.lib.TreeFilter', {
+Ext.define('WsCme.lib.TreeFilter', {
     filterByText : function(text) {
         this.filterBy(text, 'text');
     },

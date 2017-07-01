@@ -5,7 +5,7 @@
  * 树的inline筛选,直接在treeitem中进行，不需要发送到服务器
  */
 
-Ext.define('app.lib.TreeSearchField', {
+Ext.define('WsCme.lib.TreeSearchField', {
     extend : 'Ext.form.field.Text',
 
     alias : 'widget.treesearchfield',
