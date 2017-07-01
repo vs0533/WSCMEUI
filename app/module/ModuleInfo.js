@@ -19,9 +19,9 @@ Ext.define('WsCme.module.ModuleInfo', {
         // 生成此模块的数据model
 
         if (this.tf_parentKey || this.tf_isTreeModel)
-            this.model = app.model.TreeModelFactory.getModelByModule(this);
+            this.model = WsCme.model.TreeModelFactory.getModelByModule(this);
         else
-            this.model = app.model.ModelFactory.getModelByModule(this);
+            this.model = WsCme.model.ModelFactory.getModelByModule(this);
 
         // 处理一些相关的模块信息
 

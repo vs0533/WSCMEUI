@@ -11,8 +11,8 @@ Ext.define('WsCme.model.ModelFactory', {
 				extend : 'Ext.data.Model',
 
 				mixins : {
-					approve : 'app.model.ApproveBase',
-					modelbase : 'app.model.ModelFunctionBase'
+					approve : 'WsCme.model.ApproveBase',
+					modelbase : 'WsCme.model.ModelFunctionBase'
 				},
 
 				proxy : {

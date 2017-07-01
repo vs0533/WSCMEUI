@@ -22,6 +22,7 @@ Ext.define('WsCme.view.main.ModulesModel', {
      */
     getModuleInfo : function(moduleName) {
         console.log("modulename:"+moduleName);
+        var s = this.get('modules');
         var me = this;
         var result = this.get('modules').get(moduleName);
         if (!result) {

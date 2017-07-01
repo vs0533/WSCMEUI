@@ -97,10 +97,10 @@ Ext.define('WsCme.view.main.region.Center', {
                 }
             }
         }
-        ,
-        {
-            ptype: 'tabreorderer'
-        }
+        // ,
+        // {
+        //     ptype: 'tabreorderer'
+        // }
         ],
 
     listeners: {
