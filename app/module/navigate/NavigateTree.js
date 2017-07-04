@@ -72,7 +72,7 @@ Ext.define('WsCme.module.navigate.NavigateTree', {
 	initComponent : function() {
 		var me = this;
 		Ext.applyIf(me, this.config); // 将部分初始值加进来
-		this.store = Ext.create('app.module.navigate.NavigateTreeStore', {
+		this.store = Ext.create('WsCme.module.navigate.NavigateTreeStore', {
 
 			autoLoad : true,
 			// proxy : {

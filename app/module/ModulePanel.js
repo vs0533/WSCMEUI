@@ -34,7 +34,7 @@ Ext.define('WsCme.module.ModulePanel', {
 //		Ext.apply(this, this.module.getIconInfo());
 //		this.title = this.module.tf_title;
 
-		this.store = Ext.create('app.module.GridStore', {
+		this.store = Ext.create('WsCme.module.GridStore', {
 			// this.store = Ext.create('Ext.data.Store', {
 			module : this.module,
 			modulePanel : this,

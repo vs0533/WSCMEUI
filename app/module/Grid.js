@@ -91,7 +91,7 @@ Ext
 							this.setParentFilter(this.parentFilter, true);
 
 						this.schemeOrder = this.module.tf_gridSchemes[0].tf_schemeOrder;
-						this.columns = app.module.factory.ColumnsFactory.getColumns(
+						this.columns = WsCme.module.factory.ColumnsFactory.getColumns(
 								this.module, this.schemeOrder);
 
 						this.setColumnsNameToStoreExtraParams();

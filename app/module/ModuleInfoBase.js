@@ -154,7 +154,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
                 closable : true,
                 icon : this.iconURL,
                 layout : 'border',
-                items : [ Ext.create('app.module.ModulePanel', {
+                items : [ Ext.create('WsCme.module.ModulePanel', {
                     region : 'center',
                     module : this,
                     param : param,
@@ -195,7 +195,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
             text : ptitle,
             isCodeLevel : pm.codeLevel
         };
-        return Ext.create('app.module.ModulePanel', {
+        return Ext.create('WsCme.module.ModulePanel', {
             region : 'center',
             module : this,
             param : param,
@@ -232,7 +232,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
             closable : true,
             icon : this.iconURL,
             layout : 'border',
-            items : [ Ext.create('app.module.ModulePanel', {
+            items : [ Ext.create('WsCme.module.ModulePanel', {
                 region : 'center',
                 module : this,
                 param : param,
@@ -267,7 +267,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
                 closable : true,
                 icon : this.iconURL,
                 layout : 'border',
-                items : [ Ext.create('app.module.ModulePanel', {
+                items : [ Ext.create('WsCme.module.ModulePanel', {
                     region : 'center',
                     module : this,
                     parentFilter : parentFilter
@@ -304,7 +304,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
                 icon : this.iconURL,
                 closable : true,
                 layout : 'border',
-                items : [ Ext.create('app.module.ModulePanel', {
+                items : [ Ext.create('WsCme.module.ModulePanel', {
                     region : 'center',
                     gridType : 'normal',
                     module : this,
@@ -340,7 +340,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
                 icon : this.iconURL,
                 closable : true,
                 layout : 'border',
-                items : [ Ext.create('app.module.ModulePanel', {
+                items : [ Ext.create('WsCme.module.ModulePanel', {
                     region : 'center',
                     gridType : 'auditing',
                     module : this,
@@ -376,7 +376,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
                 icon : this.iconURL,
                 closable : true,
                 layout : 'border',
-                items : [ Ext.create('app.module.ModulePanel', {
+                items : [ Ext.create('WsCme.module.ModulePanel', {
                     region : 'center',
                     gridType : 'approve',
                     module : this,
@@ -402,7 +402,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
                     icon : this.iconURL,
                     closable : true,
                     layout : 'border',
-                    items : [ Ext.create('app.view.treeModule.ModuleTreePanel', {
+                    items : [ Ext.create('WsCme.view.treeModule.ModuleTreePanel', {
                         region : 'center',
                         gridType : 'normal',
                         module : this
@@ -416,7 +416,7 @@ Ext.define('WsCme.module.ModuleInfoBase', {
                     icon : this.iconURL,
                     closable : true,
                     layout : 'border',
-                    items : [ Ext.create('app.module.ModulePanel', {
+                    items : [ Ext.create('WsCme.module.ModulePanel', {
                         region : 'center',
                         gridType : 'normal',
                         module : this

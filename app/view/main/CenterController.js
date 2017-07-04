@@ -65,7 +65,7 @@ Ext.define('WsCme.view.main.CenterController', {
             var m = this.getViewModel().get('reportGroups').get(
                 reportGroup.reportGroupId);
             if (!m) {
-                var m = Ext.create('app.report.MainReport', {
+                var m = Ext.create('WsCme.report.MainReport', {
                     reportGroup: reportGroup,
                     itemId: tabItemId,
                     closable: true
