@@ -68,12 +68,12 @@ Ext.define('WsCme.view.main.Main', {
             collapsible: true,
             splitterResize: true,
             title:'sddfas',
-            html:"<h1>234</h1>"
-            // xtype: 'mainmenu'
+            //:"<h1>234</h1>"
+             xtype: 'mainmenu'
         },
         {
             region: "center",
-            // xtype: 'maincenter'
+            xtype: 'maincenter',
             title:'sdf'
         }
     ],

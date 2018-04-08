@@ -3,7 +3,7 @@
  */
 Ext.define("WsCme.config.Config",{
     statics:{
-        apiServiceUrl:"http://192.168.0.107:58109",
+        apiServiceUrl:"http://localhost:6000",
         token:localStorage.getItem("token"),
         headers:{Authorization:"bearer "+ localStorage.getItem("token")}
     }
